@@ -59,6 +59,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestCases\RegistUser.cs" />
+    <Compile Include="TestsResources\CommonTools.cs" />
     <Compile Include="TestsResources\NavigationModel.cs" />
     <Compile Include="TestsResources\Registration.cs" />
   </ItemGroup>

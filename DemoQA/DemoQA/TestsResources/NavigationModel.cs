@@ -11,9 +11,9 @@ namespace DemoQA.TestsResources
     {
         IWebDriver driver;
 
-        By registrationLink = By.Id("menu - item - 374");
+        By registrationLink = By.Id("menu-item-374");
 
-        NavigationModel(IWebDriver driver)
+        public NavigationModel(IWebDriver driver)
         {
             this.driver = driver;
         }

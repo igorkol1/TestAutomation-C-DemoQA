@@ -11,9 +11,24 @@ namespace DemoQA.TestsResources
     {
         IWebDriver driver;
 
+        By firstNameField = By.Id("name_3_firstname");
+        By lastNameField = By.Id("name_3_lastname");
+
+
         public Registration(IWebDriver driver)
         {
             this.driver = driver;
         }
+
+        public void SetFirstName(string name)
+        {
+            driver.FindElement(firstNameField).SendKeys(name);
+        }
+
+        public void SetLastName(string lastName)
+        {
+            driver.FindElement(lastNameField).SendKeys(lastName);
+        }
+
     }
 }
