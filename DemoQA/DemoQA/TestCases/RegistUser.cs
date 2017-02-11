@@ -13,6 +13,7 @@ namespace DemoQA.TestCases
     class RegistUser
     {
         private IWebDriver driver;
+        private Registration RegistrationModel;
 
         [OneTimeSetUp]
         public void Initialize()
@@ -32,8 +33,44 @@ namespace DemoQA.TestCases
         {
             NavigationModel navigation = new NavigationModel(driver);
 
-            Registration RegistrationModel = navigation.NavigateToRegistration();
+            RegistrationModel = navigation.NavigateToRegistration();
 
+        }
+
+        [Test, Order(2)]
+        public void FillMandatoryFields()
+        {
+            RegistrationModel.SetFirstName(CommonTools.CreateRandomString(5));
+
+            RegistrationModel.SetLastName(CommonTools.CreateRandomString(10));
+
+            RegistrationModel.SetHobby("dance");
+
+            RegistrationModel.SetPhone("0148123456789");
+
+            RegistrationModel.SetUserName(CommonTools.CreateRandomString(5));
+
+            RegistrationModel.SetEmail(CommonTools.CreateRandomString(10) + "@test.com");
+
+            string password = CommonTools.CreateRandomString(10);
+
+            RegistrationModel.SetPassword(password);
+
+            RegistrationModel.ConfirmPassword(password);
+
+            RegistrationModel.SubmitForm();
+        }
+
+        [Test,Order(3)]
+        public void VerifySuccesMessage()
+        {
+            RegistrationModel.VeryfiRegistrationMessage();
+        }
+
+        [TestFixtureTearDown]
+        public void TearDown()
+        {
+            driver.Quit();
         }
 
     }
