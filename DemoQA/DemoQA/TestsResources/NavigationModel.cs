@@ -12,6 +12,9 @@ namespace DemoQA.TestsResources
         IWebDriver driver;
 
         By registrationLink = By.Id("menu-item-374");
+        By draggableLink = By.Id("menu-item-140");
+        By droppableLink = By.Id("menu-item-141");
+
 
         public NavigationModel(IWebDriver driver)
         {
@@ -26,6 +29,26 @@ namespace DemoQA.TestsResources
 
             return RegistrationModel;
         }
+
+        public DraggableModel NavigateToDraggable()
+        {
+            driver.FindElement(draggableLink).Click();
+
+            var Draggable = new DraggableModel(driver);
+
+            return Draggable;
+        }
+
+        public DroppableModel NavigateToDroppable()
+        {
+            driver.FindElement(droppableLink).Click();
+
+            var Droppable = new DroppableModel(driver);
+
+            return Droppable;
+        }
+
+
 
     }
 }
