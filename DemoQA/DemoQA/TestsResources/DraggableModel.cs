@@ -35,13 +35,6 @@ namespace DemoQA.TestsResources
             int x = frame.Size.Height;
             int y = frame.Size.Width;
 
-            Console.WriteLine(x);
-            Console.WriteLine(y);
-            //act.
-            //act.DragAndDrop(driver.FindElement(dragElement), x, y).perform();
-
-            //act.ClickAndHold(driver.FindElement(dragElement)).MoveByOffset(x, y).Release().Build().Perform();
-
             act.DragAndDropToOffset(driver.FindElement(dragElement), x, y).Build().Perform();
 
         }
