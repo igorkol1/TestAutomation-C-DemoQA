@@ -17,6 +17,7 @@ namespace DemoQA.TestCases
         public void Initialize()
         {
             driver = new FirefoxDriver();
+            driver.Manage().Window.Maximize();
         }
 
         [Test]
