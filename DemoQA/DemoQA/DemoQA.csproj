@@ -67,6 +67,8 @@
     <Compile Include="TestsResources\DroppableModel.cs" />
     <Compile Include="TestsResources\NavigationModel.cs" />
     <Compile Include="TestsResources\Registration.cs" />
+    <Compile Include="TestsResources\ResizableModel.cs" />
+    <Compile Include="TestsResources\SelectableModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

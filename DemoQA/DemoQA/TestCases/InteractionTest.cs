@@ -19,6 +19,8 @@ namespace DemoQA.TestCases
         private DraggableModel Draggable;
         private DroppableModel Droppable;
         private NavigationModel navigation;
+        private ResizableModel Resizable;
+        private SelectableModel Selectable;
 
 
         [OneTimeSetUp]
@@ -46,8 +48,6 @@ namespace DemoQA.TestCases
         [Test, Order(2)]
         public void PerformDrag()
         {
-            Thread.Sleep(3000);
-            //TO DO
             Draggable.DragObjectToCorner();
         }
 
@@ -61,6 +61,31 @@ namespace DemoQA.TestCases
         public void PerformDragAndDrop()
         {
             Droppable.DragAndDropAtDestnation();
+        }
+
+        [Test, Order(5)]
+        public void ClickResizableLink()
+        {
+            Resizable = navigation.NavigateToResizable();
+        }
+
+        [Test, Order(6)]
+        public void PerformResize()
+        {
+            Resizable.PerformResize();
+        }
+
+        [Test, Order(7)]
+        public void ClickSelectableLink()
+        {
+            Selectable = navigation.NavigateToSelectable();
+        }
+
+        [Test, Order(8)]
+        public void SelectElements()
+        {
+            int[] elementsToSelect = new int[4] { 1, 3, 5, 7 };
+            Selectable.SelectElements(elementsToSelect);
         }
     }
 }
