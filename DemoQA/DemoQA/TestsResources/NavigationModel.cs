@@ -69,6 +69,15 @@ namespace DemoQA.TestsResources
             return Selecteable;
         }
 
+        public SortableModel NavigateToSortable()
+        {
+            driver.FindElement(sortableLink).Click();
+
+            var Sortable = new SortableModel(driver);
+
+            return Sortable;
+        }
+
 
 
     }

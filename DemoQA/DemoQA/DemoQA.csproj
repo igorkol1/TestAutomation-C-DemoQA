@@ -69,6 +69,7 @@
     <Compile Include="TestsResources\Registration.cs" />
     <Compile Include="TestsResources\ResizableModel.cs" />
     <Compile Include="TestsResources\SelectableModel.cs" />
+    <Compile Include="TestsResources\SortableModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -21,6 +21,7 @@ namespace DemoQA.TestCases
         private NavigationModel navigation;
         private ResizableModel Resizable;
         private SelectableModel Selectable;
+        private SortableModel Sortable;
 
 
         [OneTimeSetUp]
@@ -86,6 +87,18 @@ namespace DemoQA.TestCases
         {
             int[] elementsToSelect = new int[4] { 1, 3, 5, 7 };
             Selectable.SelectElements(elementsToSelect);
+        }
+
+        [Test, Order(9)]
+        public void ClickSortableLink()
+        {
+            Sortable = navigation.NavigateToSortable();
+        }
+
+        [Test, Order(10)]
+        public void SortElementsDecreasing()
+        {
+
         }
     }
 }
